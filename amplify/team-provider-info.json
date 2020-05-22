@@ -1,0 +1,46 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-interviewerapp-dev-233514-authRole",
+            "UnauthRoleArn": "arn:aws:iam::829249051292:role/amplify-interviewerapp-dev-233514-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::829249051292:role/amplify-interviewerapp-dev-233514-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-interviewerapp-dev-233514-deployment",
+            "UnauthRoleName": "amplify-interviewerapp-dev-233514-unauthRole",
+            "StackName": "amplify-interviewerapp-dev-233514",
+            "StackId": "arn:aws:cloudformation:us-east-2:829249051292:stack/amplify-interviewerapp-dev-233514/41187120-9bdd-11ea-8dfb-064ea827a74e",
+            "AmplifyAppId": "d1hn7cqyxgdmz8"
+        }
+    },
+    "appdevenv": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-interviewerapp-appdevenv-01444-authRole",
+            "UnauthRoleArn": "arn:aws:iam::829249051292:role/amplify-interviewerapp-appdevenv-01444-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::829249051292:role/amplify-interviewerapp-appdevenv-01444-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-interviewerapp-appdevenv-01444-deployment",
+            "UnauthRoleName": "amplify-interviewerapp-appdevenv-01444-unauthRole",
+            "StackName": "amplify-interviewerapp-appdevenv-01444",
+            "StackId": "arn:aws:cloudformation:us-east-2:829249051292:stack/amplify-interviewerapp-appdevenv-01444/c5bcf270-9be2-11ea-98c6-02ae28e83a86",
+            "AmplifyAppId": "daqm9lpuqn7tm"
+        }
+    },
+    "newenv": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-interviewerapp-newenv-140739-authRole",
+            "UnauthRoleArn": "arn:aws:iam::829249051292:role/amplify-interviewerapp-newenv-140739-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::829249051292:role/amplify-interviewerapp-newenv-140739-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-interviewerapp-newenv-140739-deployment",
+            "UnauthRoleName": "amplify-interviewerapp-newenv-140739-unauthRole",
+            "StackName": "amplify-interviewerapp-newenv-140739",
+            "StackId": "arn:aws:cloudformation:us-east-2:829249051292:stack/amplify-interviewerapp-newenv-140739/20abcfc0-9c57-11ea-80db-0aeddbb89fe2",
+            "AmplifyAppId": "daqm9lpuqn7tm"
+        },
+        "categories": {
+            "auth": {
+                "interviewerapp7775653e": {}
+            }
+        }
+    }
+}

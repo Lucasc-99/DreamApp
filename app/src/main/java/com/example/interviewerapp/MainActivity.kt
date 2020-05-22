@@ -2,10 +2,11 @@ package com.example.interviewerapp
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.interviewerapp.R.layout.activity_main
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         editTextEmail.clearFocus()
 
 
+        //Button to begin interview
         entryButton.setOnClickListener {
             //SAVE USER DATA
             var editor = sharedPreferences.edit()

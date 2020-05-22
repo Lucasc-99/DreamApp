@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.amazonaws.appsync'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -15,6 +16,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -32,15 +37,36 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
 
+    //For AWSMobileClient only:
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.16.+'
+
+    //Amplify
+    implementation 'com.amplifyframework:core:0.10.0'
+    implementation 'com.amplifyframework:aws-api:0.10.0'
+
     //Base SDK
     implementation 'com.amazonaws:aws-android-sdk-core:2.15.+'
     implementation 'com.amazonaws:aws-android-sdk-s3:2.7.+'
 
-    //Not Needed? Appsync
+    //AppSync SDK
     implementation 'com.amazonaws:aws-android-sdk-appsync:2.8.+'
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
-    //Not Needed?
+
+    //For the drop-in UI also:
+    implementation 'com.amazonaws:aws-android-sdk-auth-userpools:2.16.+'
+    implementation 'com.amazonaws:aws-android-sdk-auth-ui:2.16.+'
+
+    //For hosted UI also:
+    implementation 'com.amazonaws:aws-android-sdk-cognitoauth:2.16.+'
+
+    //S3 and auth
+    implementation 'com.amplifyframework:core:0.10.0'
+    implementation 'com.amplifyframework:aws-storage-s3:0.10.0'
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.16.+'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.15.+'
+    implementation ('com.amazonaws:aws-android-sdk-mobile-client:2.15.+@aar') { transitive = true }
+    implementation ('com.amazonaws:aws-android-sdk-auth-userpools:2.15.+@aar') { transitive = true }
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
