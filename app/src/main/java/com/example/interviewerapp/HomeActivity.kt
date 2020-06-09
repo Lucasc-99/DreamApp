@@ -3,6 +3,7 @@ package com.example.interviewerapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import com.example.interviewerapp.R.layout.activity_home
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,6 +17,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         goToMainButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
     }

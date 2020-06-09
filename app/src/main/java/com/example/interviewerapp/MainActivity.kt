@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
         editText.setText(sharedPreferences.getString("username", ""))
         editTextEmail.setText(sharedPreferences.getString("email",""))
+        editTextLastName.setText(sharedPreferences.getString("lastname", ""))
+        editTextLastName.clearFocus()
         editText.clearFocus()
         editTextEmail.clearFocus()
 
@@ -25,8 +27,9 @@ class MainActivity : AppCompatActivity() {
         entryButton.setOnClickListener {
             //SAVE USER DATA
             var editor = sharedPreferences.edit()
-            editor.putString("username", editText.text.toString() )
+            editor.putString("username", editText.text.toString())
             editor.putString("email", editTextEmail.text.toString())
+            editor.putString("lastname", editTextLastName.text.toString())
             editor.commit()
 
             val intent = Intent(this, InterviewActivity::class.java)

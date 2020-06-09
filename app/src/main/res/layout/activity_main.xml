@@ -8,6 +8,30 @@
     android:focusableInTouchMode="true"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/editTextLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#A9A9A9"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="Last Name"
+        android:inputType="textCapWords"
+        android:textColorHighlight="#009688"
+        android:textColorHint="#e3e3e3"
+        android:textColorLink="#00030303"
+        android:textCursorDrawable="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/entryButton"
         android:layout_width="wrap_content"
@@ -21,13 +45,12 @@
         android:text="Begin Interview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.799" />
+        app:layout_constraintVertical_bias="0.856" />
 
     <EditText
-        android:focusableInTouchMode="true"
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,11 +58,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="120dp"
         android:backgroundTint="#A9A9A9"
         android:ems="10"
+        android:focusableInTouchMode="true"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="Name"
+        android:hint="First Name"
         android:inputType="textCapWords"
         android:textColorHighlight="#009688"
         android:textColorHint="#e3e3e3"
@@ -58,7 +82,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="96dp"
         android:backgroundTint="#A9A9A9"
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
@@ -82,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -99,7 +123,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Interviewer App"
+            android:text="Dream Reporter BETA"
             android:textColor="#ffffff"
             android:layout_gravity="center"
             />

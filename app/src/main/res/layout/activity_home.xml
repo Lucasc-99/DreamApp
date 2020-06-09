@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Interviewer App"
+            android:text="Dream Reporter BETA"
             android:textColor="#ffffff"
             android:layout_gravity="center"
             />
@@ -29,22 +29,33 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="108dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="292dp"
+        android:layout_width="113dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="72dp"
         android:text="Home Screen. Add logo or design here later"
+        app:layout_constraintBottom_toTopOf="@+id/goToMainButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/goToMainButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="88dp"
         android:text="Interview"
+        app:layout_constraintBottom_toTopOf="@+id/settingsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="144dp"
+        android:text="Settings"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

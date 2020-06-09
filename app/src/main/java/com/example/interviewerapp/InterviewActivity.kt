@@ -1,6 +1,7 @@
 package com.example.interviewerapp
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.media.MediaRecorder
@@ -26,6 +27,9 @@ import com.amplifyframework.storage.result.StorageUploadFileResult
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
 import kotlinx.android.synthetic.main.activity_first_question.*
 import java.io.IOException
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class InterviewActivity : AppCompatActivity() {
@@ -34,8 +38,9 @@ class InterviewActivity : AppCompatActivity() {
     private final var externalStorage = System.getenv("EXTERNAL_STORAGE")
     //private final var internalStorage  = this.getFilesDir().getAbsolutePath()
 
-    //private val TAG = "InterviewActivity"
-
+    //
+    //Fields
+    //
     private var fileIterator = 1
     private var output: String? = null
     private var mediaRecorder: MediaRecorder? = null
@@ -46,6 +51,9 @@ class InterviewActivity : AppCompatActivity() {
     val icecream = listOf<Int>(R.drawable.pic10,R.drawable.pic3,R.drawable.pic6,R.drawable.pic7)
     val babies = listOf<Int>(R.drawable.pic2,R.drawable.pic5,R.drawable.pic9)
 
+    //
+    //Initialization
+    //
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_question)
@@ -54,6 +62,12 @@ class InterviewActivity : AppCompatActivity() {
         beginImagesButton.visibility = View.INVISIBLE
         recordButton.setBackgroundColor(Color.LTGRAY)
 
+        cancelButton.setOnClickListener {
+
+            //val i = Intent(this, MainActivity::class.java)
+            //startActivity(i)
+            super.onBackPressed()
+        }
 
         val credentialsProvider =
             CognitoCachingCredentialsProvider(
@@ -74,26 +88,26 @@ class InterviewActivity : AppCompatActivity() {
                             AWSS3StoragePlugin()
                         )
                         Amplify.configure(applicationContext)
-                        Log.i("amplifyapponly", "All set and ready to go!")
+                        //Log.i("amplifyapponly", "All set and ready to go!")
                     } catch (exception: java.lang.Exception) {
-                        Log.e("amplifyapponly", exception.message, exception)
+                        //Log.e("amplifyapponly", exception.message, exception)
                     }
 
                     when (userStateDetails.userState) {
                         UserState.SIGNED_IN -> runOnUiThread {
 
-                            Log.i("amplifyapponly", "user is signed in")
+                            //Log.i("amplifyapponly", "user is signed in")
                         }
                         UserState.SIGNED_OUT -> runOnUiThread {
 
-                            Log.i("amplifyapponly", "user is signed out")
+                            //Log.i("amplifyapponly", "user is signed out")
                         }
                         else -> AWSMobileClient.getInstance().signOut()
                     }
                 }
 
                 override fun onError(e: Exception) {
-                    Log.e("amplifyapponly", e.toString())
+                    //Log.e("amplifyapponly", e.toString())
                 }
             })
 
@@ -113,11 +127,16 @@ class InterviewActivity : AppCompatActivity() {
                     "amplifyapponly",
                     "user logged in via federation, but currently needs new tokens"
                 )
-                else -> Log.e("amplifyapponly", "unsupported")
+                //Log.e("amplifyapponly", "unsupported")
             }
         }
+
     }
 
+
+    //
+    //Begins recording
+    //
     public fun recordButtonClicked(v : View?) {
 
         /* Delay user from pressing button again */
@@ -153,12 +172,17 @@ class InterviewActivity : AppCompatActivity() {
         }
     }
 
+    //
+    //Moves to next state in interview
+    //
     public fun nextButtonClicked(v : View?){
         stopRecording()
         nextQuestion()
     }
 
-
+    //
+    //Begins images section of the interview
+    //
     public fun beginImagesButtonClicked(v : View?) {
         nextButton.visibility = View.INVISIBLE
         beginImagesButton.visibility = View.INVISIBLE
@@ -166,6 +190,9 @@ class InterviewActivity : AppCompatActivity() {
         nextQuestion()
     }
 
+    //
+    //Runs when recording starts
+    //
     private fun startRecording() {
         try {
             recordButton.setBackgroundColor(Color.RED);
@@ -191,6 +218,9 @@ class InterviewActivity : AppCompatActivity() {
         }
     }
 
+    //
+    //Runs when recording ends and saves to S3 storage
+    //
     private fun stopRecording() {
         if (state) {
             recordButton.setBackgroundColor(Color.LTGRAY)
@@ -206,31 +236,43 @@ class InterviewActivity : AppCompatActivity() {
                 nextQuestion()
             }
             state = false
-            //Set file output possibly redundant?
+
             output = externalStorage + "/"+intent.getStringExtra("Username")+ returnCurrentQuestion() + fileIterator.toString() +".mp3"
 
             //
             //Storage File Upload
-            Amplify.Storage.uploadFile((intent.getStringExtra("Username")+ returnCurrentQuestion() + fileIterator.toString() +".mp3"),
+
+            val cal = Calendar.getInstance()
+            val date: Date = cal.time
+            val hdateFormat: DateFormat = SimpleDateFormat("HH:mm:ss")
+            val ydateFormat: DateFormat = SimpleDateFormat("MM:dd:yyyy")
+            val yearDateString: String = ydateFormat.format(date)
+            val secDateString: String = hdateFormat.format(date)
+
+            Amplify.Storage.uploadFile((intent.getStringExtra("Email") + "/" +  yearDateString + "/" + returnCurrentQuestion() + secDateString +  ".mp3"),
                 output.toString(),
                 { result: StorageUploadFileResult ->
-                    Log.i(
+                    /*Log.i(
                         "amplifyapponly",
                         "Successfully uploaded: " + result.getKey()
-                    )
+                    )*/
                 }
             ) { storageFailure: StorageException? ->
-                Log.e(
+                /*Log.e(
                     "amplifyapponly",
                     "Upload error.",
                     storageFailure
-                )
+                )*/
             }
+            //Delete the file from internal storage, thus no redundancy
+
             fileIterator++
         }
     }
 
+    //
     //Returns string with current question
+    //
     private fun returnCurrentQuestion(): String{
         when (questionIterator) {
             0 -> return "dream"
@@ -242,6 +284,10 @@ class InterviewActivity : AppCompatActivity() {
         }
     }
 
+
+    //
+    //Returns a random image to use with images section
+    //
     private fun returnRandomImage(t :String): Int{
         when(t){
             "dogs"-> return dogs[(0..2).random()]
@@ -251,6 +297,9 @@ class InterviewActivity : AppCompatActivity() {
         }
     }
 
+    //
+    //Sets state to next question in the interview
+    //
     private fun nextQuestion(){
         questionIterator++
         currentRecordingTime = 0
