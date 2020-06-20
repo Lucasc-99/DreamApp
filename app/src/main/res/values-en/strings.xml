@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PsychoMeasure InterviewerApp</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="notif_title_en">Enable daily notifications</string>
+    <string name="instructions_string">Welcome, enter your information below</string>
+    <string name="first_name_str">First Name</string>
+    <string name="last_name_str">Last Name</string>
+    <string name="begin_str">Begin</string>
+    <string name="cancel_str">Cancel</string>
+    <string name="record_str">Record</string>
+    <string name="skip_str">Next</string>
+    <string name="dream_str">Tell me about a recent dream you had</string>
+    <string name="day_str">Tell me about your day yesterday</string>
+    <string name="img_instr_str">I will now show you a series of images for 15 seconds, you will have to tell a story</string>
+    <string name="dogs_str">Now tell me a story about the puppy</string>
+    <string name="ice_str">Now tell me a story about the ice-cream</string>
+    <string name="languages_header_en">Languages</string>
+    <string name="notification_header_en">Notifications</string>
+    <string name="languages_title_en">Choose your language</string>
+    <string name="engl">English</string>
+    <string name="span">Spanish</string>
+    <string name="ital">Italian</string>
+    <string name="port">Portuguese</string>
+    <string name="fren">French</string>
+    <string name="interview_button_string">Interview</string>
+    <string name="settings_button_string">Settings</string>
+    <string name="baby_str">Now tell me a story about the baby</string>
+    <string name="thank_you">Thank you for participating</string>
+    <string name="application_title_en">Dream Reporter</string>
+</resources>

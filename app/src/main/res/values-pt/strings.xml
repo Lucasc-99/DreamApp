@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PsychoMeasure InterviewerApp</string>
+    <string name="application_title_en">Gravador de sonhos</string>
+    <string name="title_activity_settings">Configurações</string>
+    <string name="notif_title_en">Ativar notificações diárias</string>
+    <string name="languages_header_en">Línguas</string>
+    <string name="notification_header_en">Notificações</string>
+    <string name="languages_title_en">Escolha seu idioma</string>
+    <string name="engl">Inglês</string>
+    <string name="span">Espanhol</string>
+    <string name="ital">Italiano</string>
+    <string name="port">Português</string>
+    <string name="fren">Francês</string>
+    <string name="interview_button_string">Entrevista</string>
+    <string name="settings_button_string">Configurações</string>
+    <string name="instructions_string">Bem-vindo, digite suas informações abaixo</string>
+    <string name="first_name_str">Primeiro nome</string>
+    <string name="last_name_str">Último nome</string>
+    <string name="begin_str">Início</string>
+    <string name="cancel_str">Cancelar</string>
+    <string name="record_str">Registro</string>
+    <string name="skip_str">Próximo</string>
+    <string name="dream_str">Conte-me sobre um sonho recente que você teve</string>
+    <string name="day_str">Conte-me sobre o seu dia ontem</string>
+    <string name="img_instr_str">Agora vou mostrar uma série de imagens por 15 segundos, você terá que contar uma história</string>
+    <string name="dogs_str">Agora me conte uma história sobre o filhote</string>
+    <string name="ice_str">Agora me conte uma história sobre o sorvete</string>
+    <string name="baby_str">Agora me conte uma história sobre o bebê</string>
+    <string name="thank_you">Agora me conte uma história sobre o bebê</string>
+</resources>

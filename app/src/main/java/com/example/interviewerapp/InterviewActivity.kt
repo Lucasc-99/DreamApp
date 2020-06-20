@@ -1,7 +1,6 @@
 package com.example.interviewerapp
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.media.MediaRecorder
@@ -26,6 +25,7 @@ import com.amplifyframework.storage.StorageException
 import com.amplifyframework.storage.result.StorageUploadFileResult
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
 import kotlinx.android.synthetic.main.activity_first_question.*
+import java.io.File
 import java.io.IOException
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -57,8 +57,6 @@ class InterviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_question)
-        recordButton.text = "Record"//Translate
-        questionTextView.text = "Tell me about a recent dream you had"//Translate
         beginImagesButton.visibility = View.INVISIBLE
         recordButton.setBackgroundColor(Color.LTGRAY)
 
@@ -66,6 +64,7 @@ class InterviewActivity : AppCompatActivity() {
 
             //val i = Intent(this, MainActivity::class.java)
             //startActivity(i)
+            //End the activity
             super.onBackPressed()
         }
 
@@ -256,6 +255,8 @@ class InterviewActivity : AppCompatActivity() {
                         "amplifyapponly",
                         "Successfully uploaded: " + result.getKey()
                     )*/
+                    val file = File(output.toString())
+                    val deleted: Boolean = file.delete()
                 }
             ) { storageFailure: StorageException? ->
                 /*Log.e(
@@ -264,7 +265,6 @@ class InterviewActivity : AppCompatActivity() {
                     storageFailure
                 )*/
             }
-            //Delete the file from internal storage, thus no redundancy
 
             fileIterator++
         }
@@ -307,9 +307,9 @@ class InterviewActivity : AppCompatActivity() {
         fileIterator = 1
 
         when(questionIterator){
-            1-> questionTextView.text = "Tell me about your day yesterday"//Translate
+            1-> questionTextView.text = R.string.day_str.toString()//Translate
             2-> {
-                questionTextView.text = "I will now show you a series of images for 15 seconds, you will have to tell a story about each one"//Translate
+                questionTextView.text = R.string.img_instr_str.toString()//Translate
                 nextButton.visibility = View.INVISIBLE
                 recordButton.visibility = View.INVISIBLE
                 chronometer.visibility = View.INVISIBLE
@@ -325,7 +325,7 @@ class InterviewActivity : AppCompatActivity() {
                         nextButton.visibility = View.VISIBLE
                         recordButton.visibility = View.VISIBLE
                         chronometer.visibility = View.VISIBLE
-                        questionTextView.text = "Now tell me a story about the puppy"//Translate
+                        questionTextView.text = R.string.dogs_str.toString()//Translate
                         questionTextView.visibility = View.VISIBLE
                     },
                     10000
@@ -347,7 +347,7 @@ class InterviewActivity : AppCompatActivity() {
                         imageDisplay.visibility = View.INVISIBLE
                         recordButton.visibility = View.VISIBLE
                         chronometer.visibility = View.VISIBLE
-                        questionTextView.text = "Now tell me a story about the ice cream"//Translate
+                        questionTextView.text = R.string.ice_str.toString()//Translate
                         questionTextView.visibility = View.VISIBLE
                     },
                     10000
@@ -368,7 +368,7 @@ class InterviewActivity : AppCompatActivity() {
                         imageDisplay.visibility = View.INVISIBLE
                         recordButton.visibility = View.VISIBLE
                         chronometer.visibility = View.VISIBLE
-                        questionTextView.text = "Now tell me a story about the baby"//Translate
+                        questionTextView.text = R.string.baby_str.toString()//Translate
                         questionTextView.visibility = View.VISIBLE
                     },
                     10000
@@ -379,10 +379,20 @@ class InterviewActivity : AppCompatActivity() {
                 recordButton.visibility = View.INVISIBLE
                 chronometer.visibility = View.INVISIBLE
                 nextButton.visibility = View.INVISIBLE
-                questionTextView.text = "Thank you for participating!"//Translate
+                questionTextView.text = R.string.thank_you.toString()//Translate
             }
         }
     }
 
-
+    override fun onDestroy() {
+        if(state){
+            state = false
+            chronometer.stop()
+            mediaRecorder?.stop()
+            mediaRecorder?.release()
+            val file = File(output.toString())
+            val deleted: Boolean = file.delete()
+        }
+        super.onDestroy()
+    }
 }

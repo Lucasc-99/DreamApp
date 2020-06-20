@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PsychoMeasure InterviewerApp</string>
+    <string name="application_title_en">Registratore di sogni</string>
+    <string name="title_activity_settings">Configurazioni</string>
+    <string name="notif_title_en">Abilita notifiche giornaliere</string>
+    <string name="languages_header_en">Le lingue</string>
+    <string name="notification_header_en">Notifiche</string>
+    <string name="languages_title_en">Scegli la tua LINGUA</string>
+    <string name="engl">inglese</string>
+    <string name="span">spagnolo</string>
+    <string name="ital">italiano</string>
+    <string name="port">portoghese</string>
+    <string name="fren">francese</string>
+    <string name="interview_button_string">Colloquio</string>
+    <string name="settings_button_string">Configurazioni</string>
+    <string name="instructions_string">Benvenuto, inserisci le tue informazioni di seguito</string>
+    <string name="first_name_str">Nome di battesimo</string>
+    <string name="last_name_str">Cognome</string>
+    <string name="begin_str">Inizio</string>
+    <string name="cancel_str">Annulla</string>
+    <string name="record_str">" Registra"</string>
+    <string name="skip_str">Il prossimo</string>
+    <string name="dream_str">Raccontami di un sogno recente che hai fatto</string>
+    <string name="day_str">Parlami della tua giornata di ieri</string>
+    <string name="img_instr_str">Ora ti mostrerò una serie di immagini per 15 secondi, dovrai raccontare una storia</string>
+    <string name="dogs_str">Ora raccontami una storia sul cucciolo</string>
+    <string name="ice_str">Ora raccontami una storia sul gelato</string>
+    <string name="baby_str">Ora raccontami una storia sul bambino</string>
+    <string name="thank_you">Ora raccontami una storia sul bambino</string>
+</resources>

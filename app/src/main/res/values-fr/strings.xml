@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PsychoMeasure InterviewerApp</string>
+    <string name="application_title_en">Enregistreur de rêve</string>
+    <string name="title_activity_settings">Configurations</string>
+    <string name="notif_title_en">Activer les notifications quotidiennes</string>
+    <string name="languages_header_en">Langages</string>
+    <string name="notification_header_en">Notifications</string>
+    <string name="languages_title_en">Choisissez votre langue</string>
+    <string name="engl">Anglais</string>
+    <string name="span">Espagnol</string>
+    <string name="ital">Italien</string>
+    <string name="port">Portugais</string>
+    <string name="fren">Français</string>
+    <string name="interview_button_string">Entretien</string>
+    <string name="settings_button_string">Configurations</string>
+    <string name="instructions_string">Bienvenue, entrez vos informations ci-dessous</string>
+    <string name="first_name_str">Prénom</string>
+    <string name="last_name_str">Nom de famille</string>
+    <string name="begin_str">Commencer</string>
+    <string name="cancel_str">Annuler</string>
+    <string name="record_str">Record</string>
+    <string name="skip_str">Prochain</string>
+    <string name="dream_str">Parlez-moi d\'un rêve récent que vous avez fait</string>
+    <string name="day_str">Parlez-moi de votre journée d\'hier</string>
+    <string name="img_instr_str">Je vais maintenant vous montrer une série d\'images pendant 15 secondes, vous devrez raconter une histoire</string>
+    <string name="dogs_str">Maintenant, raconte-moi une histoire sur le chiot</string>
+    <string name="ice_str">Maintenant, raconte-moi une histoire sur la glace</string>
+    <string name="baby_str">Maintenant, raconte-moi une histoire sur le bébé</string>
+    <string name="thank_you">Maintenant, raconte-moi une histoire sur le bébé</string>
+</resources>

@@ -14,6 +14,9 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
         setContentView(R.layout.activity_home)
         goToMainButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

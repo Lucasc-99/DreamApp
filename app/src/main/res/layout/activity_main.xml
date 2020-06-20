@@ -21,7 +21,7 @@
         android:ems="10"
         android:focusableInTouchMode="true"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="Last Name"
+        android:hint="@string/last_name_str"
         android:inputType="textCapWords"
         android:textColorHighlight="#009688"
         android:textColorHint="#e3e3e3"
@@ -42,7 +42,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Begin Interview"
+        android:text="@string/begin_str"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.456"
@@ -63,7 +63,7 @@
         android:ems="10"
         android:focusableInTouchMode="true"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="First Name"
+        android:hint="@string/first_name_str"
         android:inputType="textCapWords"
         android:textColorHighlight="#009688"
         android:textColorHint="#e3e3e3"
@@ -101,12 +101,13 @@
         android:id="@+id/textView"
         android:layout_width="261dp"
         android:layout_height="42dp"
-        android:text="Welcome! Enter your information below"
+        android:text="@string/instructions_string"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.564" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.586" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

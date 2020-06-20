@@ -1,0 +1,20 @@
+<PreferenceScreen
+    xmlns:holo="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        holo:title="@string/notification_header_en">
+
+        <SwitchPreferenceCompat
+            holo:key="notification"
+            holo:title="@string/notif_title_en"/>
+
+        <Preference
+            holo:key="timesetter"
+            holo:title="Set the time"
+            holo:enabled="true"
+            holo:dependency="notification"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
