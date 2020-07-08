@@ -27,5 +27,5 @@
     <string name="dogs_str">Maintenant, raconte-moi une histoire sur le chiot</string>
     <string name="ice_str">Maintenant, raconte-moi une histoire sur la glace</string>
     <string name="baby_str">Maintenant, raconte-moi une histoire sur le bébé</string>
-    <string name="thank_you">Maintenant, raconte-moi une histoire sur le bébé</string>
+    <string name="thank_you">Merci d\'avoir participé</string>
 </resources>

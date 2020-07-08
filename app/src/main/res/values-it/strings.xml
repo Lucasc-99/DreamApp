@@ -27,5 +27,5 @@
     <string name="dogs_str">Ora raccontami una storia sul cucciolo</string>
     <string name="ice_str">Ora raccontami una storia sul gelato</string>
     <string name="baby_str">Ora raccontami una storia sul bambino</string>
-    <string name="thank_you">Ora raccontami una storia sul bambino</string>
+    <string name="thank_you">Grazie per aver partecipato</string>
 </resources>
