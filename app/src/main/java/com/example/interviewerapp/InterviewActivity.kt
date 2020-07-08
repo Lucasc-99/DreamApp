@@ -58,8 +58,7 @@ class InterviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_question)
         beginImagesButton.visibility = View.INVISIBLE
-        recordButton.setBackgroundColor(Color.LTGRAY)
-
+        recordButton.setImageResource(R.drawable.ic_blue_record_scaled)
         cancelButton.setOnClickListener {
 
             //val i = Intent(this, MainActivity::class.java)
@@ -194,8 +193,10 @@ class InterviewActivity : AppCompatActivity() {
     //
     private fun startRecording() {
         try {
-            recordButton.setBackgroundColor(Color.RED);
-            recordButton.text = "Recording"//Translate
+
+
+            recordButton.setImageResource(R.drawable.ic_red_record_scaled)
+
             //Set file output
             output = externalStorage + "/"+ intent.getStringExtra("Username") + returnCurrentQuestion() + fileIterator.toString() +".mp3"
             mediaRecorder = MediaRecorder()
@@ -222,8 +223,10 @@ class InterviewActivity : AppCompatActivity() {
     //
     private fun stopRecording() {
         if (state) {
-            recordButton.setBackgroundColor(Color.LTGRAY)
-            recordButton.text = "Record"//Translate
+            recordButton.setImageResource(R.drawable.ic_blue_record_scaled)
+            //recordButton.setBackgroundColor(R.drawable.button_border)
+
+            //recordButton.setTextColor(Color.parseColor("#77c3b7"))
             mediaRecorder?.stop()
             mediaRecorder?.release()
             chronometer.stop()
@@ -307,9 +310,9 @@ class InterviewActivity : AppCompatActivity() {
         fileIterator = 1
 
         when(questionIterator){
-            1-> questionTextView.text = R.string.day_str.toString()//Translate
+            1-> questionTextView.setText(R.string.day_str)//Translate
             2-> {
-                questionTextView.text = R.string.img_instr_str.toString()//Translate
+                questionTextView.setText(R.string.img_instr_str)//Translate
                 nextButton.visibility = View.INVISIBLE
                 recordButton.visibility = View.INVISIBLE
                 chronometer.visibility = View.INVISIBLE
@@ -325,7 +328,7 @@ class InterviewActivity : AppCompatActivity() {
                         nextButton.visibility = View.VISIBLE
                         recordButton.visibility = View.VISIBLE
                         chronometer.visibility = View.VISIBLE
-                        questionTextView.text = R.string.dogs_str.toString()//Translate
+                        questionTextView.setText(R.string.dogs_str)//Translate
                         questionTextView.visibility = View.VISIBLE
                     },
                     10000
@@ -347,7 +350,7 @@ class InterviewActivity : AppCompatActivity() {
                         imageDisplay.visibility = View.INVISIBLE
                         recordButton.visibility = View.VISIBLE
                         chronometer.visibility = View.VISIBLE
-                        questionTextView.text = R.string.ice_str.toString()//Translate
+                        questionTextView.setText(R.string.ice_str)//Translate
                         questionTextView.visibility = View.VISIBLE
                     },
                     10000
@@ -368,7 +371,7 @@ class InterviewActivity : AppCompatActivity() {
                         imageDisplay.visibility = View.INVISIBLE
                         recordButton.visibility = View.VISIBLE
                         chronometer.visibility = View.VISIBLE
-                        questionTextView.text = R.string.baby_str.toString()//Translate
+                        questionTextView.setText(R.string.baby_str)//Translate
                         questionTextView.visibility = View.VISIBLE
                     },
                     10000
@@ -379,7 +382,7 @@ class InterviewActivity : AppCompatActivity() {
                 recordButton.visibility = View.INVISIBLE
                 chronometer.visibility = View.INVISIBLE
                 nextButton.visibility = View.INVISIBLE
-                questionTextView.text = R.string.thank_you.toString()//Translate
+                questionTextView.setText(R.string.thank_you)//Translate
             }
         }
     }

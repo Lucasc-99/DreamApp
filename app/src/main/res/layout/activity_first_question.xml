@@ -8,22 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/recordButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="20dp"
-            android:text="@string/record_str"
-            android:onClick="recordButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <Chronometer
             android:id="@+id/chronometer"
             android:layout_width="match_parent"
@@ -33,33 +17,34 @@
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="52dp"
+            android:layout_marginBottom="36dp"
             android:gravity="center_horizontal|center_vertical"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/recordButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/questionTextView"
             android:layout_width="300dp"
-            android:layout_height="86dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="200dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="276dp"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/dream_str"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/recordButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/beginImagesButton"
+            android:background="@drawable/button_border"
+            android:textColor="#77c3b7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -98,15 +83,20 @@
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/button_border"
             android:onClick="nextButtonClicked"
             android:text="@string/skip_str"
+            android:textColor="#77c3b7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.621"
             app:layout_constraintStart_toEndOf="@+id/recordButton" />
 
         <Button
             android:id="@+id/cancelButton"
+            android:background="@drawable/button_border"
+            android:textColor="#77c3b7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -115,6 +105,19 @@
             android:text="@string/cancel_str"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/recordButton"
+            android:layout_width="87dp"
+            android:layout_height="82dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@android:color/white"
+            android:background="@drawable/recordbuttonbackground"
+            android:onClick="recordButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_blue_record_scaled" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

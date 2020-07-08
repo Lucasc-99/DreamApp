@@ -16,7 +16,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="52dp"
         android:backgroundTint="#A9A9A9"
         android:ems="10"
         android:focusableInTouchMode="true"
@@ -29,11 +29,12 @@
         android:textCursorDrawable="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/entryButton"
+        android:background="@drawable/button_border"
+        android:textColor="#77c3b7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -45,10 +46,10 @@
         android:text="@string/begin_str"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856" />
+        app:layout_constraintVertical_bias="0.86" />
 
     <EditText
         android:id="@+id/editText"
@@ -58,7 +59,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="124dp"
         android:backgroundTint="#A9A9A9"
         android:ems="10"
         android:focusableInTouchMode="true"
@@ -71,7 +72,6 @@
         android:textCursorDrawable="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -94,7 +94,6 @@
         android:textCursorDrawable="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toTopOf="@+id/entryButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -104,10 +103,9 @@
         android:text="@string/instructions_string"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.586" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -121,12 +119,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dream Reporter BETA"
-            android:textColor="#ffffff"
-            android:layout_gravity="center"
-            />
+
     </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="333dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:srcCompat="@drawable/psychomeasurelogotext" />
 </androidx.constraintlayout.widget.ConstraintLayout>

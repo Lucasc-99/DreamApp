@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         editText.clearFocus()
         editTextEmail.clearFocus()
 
+        //Set notification for tomorrow at 12
+
 
         //Button to begin interview
         entryButton.setOnClickListener {
