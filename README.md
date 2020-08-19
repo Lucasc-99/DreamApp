@@ -10,5 +10,3 @@
 
 https://www.psychomeasure.com/
 
-
-**NOTE**: the amplify folder has been removed for security purposes
