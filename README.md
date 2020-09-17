@@ -5,8 +5,3 @@
 -It supports 5 languages: English, Spanish, French, Italian, Portuguese
 
 -The backend was built with AWS Amplify
-
--Built for use by Psychomeasure ltd. 
-
-https://www.psychomeasure.com/
-
