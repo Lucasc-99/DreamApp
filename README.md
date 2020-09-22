@@ -1,7 +1,7 @@
 ## Android application for interview data collection
 
--This application asks patients to respond to basic questions and stores audio in AWS S3 storage.
+An Android application for dream collection and storage in the cloud
 
--It supports 5 languages: English, Spanish, French, Italian, Portuguese
+-Supports 5 languages: English, Spanish, French, Italian, Portuguese
 
--The backend was built with AWS Amplify
+-Backend built with AWS Amplify
