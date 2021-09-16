@@ -6,7 +6,7 @@ https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0242903
 
 An Android application for audio data collection and storage in the AWS cloud
 
--3 static interview questions and a randomized photo story-telling task.
+-3 static interview questions and a randomized photo story-telling task, allowing users to record audio responses.
 
 -Backend deployed with AWS Amplify, writes recorded files to encrypted AWS S3 Storage Buckets
 
